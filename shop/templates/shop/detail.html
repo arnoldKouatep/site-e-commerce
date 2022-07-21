@@ -1,25 +1,41 @@
 {% extends "shop/base.html" %}
 
+{% load static %}
+
 {% block content %}
 
-    <div class="row">
-        <div class="col-md-6">
-            <div>
-                <img src="{{ product.image }}" width="500px" height="500px" alt="">
+    <div class="container">
+        <div class="row text-center mt-3">
+            <div class="col-md-6">
+                <div>
+                    {% if article.image == "http://default" %}
+                
+                        <img class="card-img-top" src="{% static 'img/logo.png' %}" alt="Card image cap" style="width: 500px;">
+                        
+                    {% else %}
+                        
+                        <img class="card-img-top" src="{{ product.image.url }}" alt="Card image cap" style="width: 500px;" height="500px" >
+                        
+                    {% endif %}
+                    <!-- <img src="{{ product.image.url }}" width="500px" height="500px" alt=""> -->
+                </div>
             </div>
+            <div class="col-md-6">
+                <div class="text-warning display-3 text-center">
+                    {{ product.title }}
+                </div>
+                <div class="text-danger">
+                    Prix:   ${{ product.price }}
+                </div>
+                <div>
+                    {{ product.description }}
+                </div>
+                <a href=""><button class="btn btn-success">Acheter</button></a>
+            </div>
+
+            
         </div>
-        <div class="col-md-6">
-            <div class="text-warning display-3">
-                {{ product.title }}
-            </div>
-            <div class="text-danger">
-                Prix:   ${{ product.price }}
-            </div>
-            <div>
-                {{ product.description }}
-            </div>
-            <a href=""><button class="btn btn-success">Acheter</button></a>
-        </div>
+        
     </div>
 
 

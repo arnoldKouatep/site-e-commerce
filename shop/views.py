@@ -44,3 +44,8 @@ def confirmation(request):
         nom = item.nom
         
     return render(request, 'shop/confirmation.html', {'name': nom})
+
+
+def listes_produit(request):
+    list_articles = Product.objects.all()
+    return render(request, 'shop/listes_produit.html', {"listes_produit":list_articles})

@@ -1,11 +1,35 @@
 {% extends "shop/base.html" %}
 
+{% load static %}
+
 {% block content %}
-<div class="row">
-    <div class="col-md-12">
-        <h3 class="text-dark text-center bg-warning">Salut Mr/Mrs {{ name }} </h3>
-        <h4 class="text-muted">Merci de nous faire confiance Mr/Mrs {{ name }}. Nous avons recu votre commande, vous serez livrez dans un delai de 1 jour.</h4>
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <div class="card mb-3 p-2">
+                <br>
+                <h3 class="text-dark text-center bg-warning">Salut Mr/Mrs <b>{{ name }}</b></h3>
+            <br>
+            <h4 class="text-muted">Merci de nous faire confiance Mr/Mrs <i>{{ name }}</b>. Nous avons recu votre commande, vous serez livrez dans un delai de 1 jour.
+                <br>
+              
+            </h4>
+
+            <div class="container">
+                <div class="row text-center mt-3">
+                    <div class="col-md-12">
+                        <a class="navbar-brand" href="{% url 'home' %}"><button type="submit" class="btn btn-primary text-center">ok</button></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+            
+        </div>
+
     </div>
 </div>
+
+
 
 {% endblock %}

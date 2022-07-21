@@ -1,0 +1,51 @@
+{% extends "shop/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-12 card mb-3 p-2">
+            <h1 class="text-center mt-3">Liste des produits disponible</h1>
+        </div>
+       
+        <div class="col-md-12">
+            {% if listes_produit %}
+            <div class="card">
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead class="text-center">
+                            <tr>
+                                <th class="h6">Titre</th>
+                                <th class="h6">Categories</th>
+                                <th class="h6">Prix</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-center">
+                            {% for articles in listes_produit %}
+                            <tr>
+                                <td class="h6"><a href="{{ articles.id }}" >{{articles.title|truncatewords:3}}</a></td>
+                                <td class="h6 "><a href="" >{{articles.category }}</a></td>
+                                <td>
+                                    <a href="" >{{articles.price}}</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        <tbody>
+                    </table>
+
+                </div>
+            </div>
+            
+            {% else %}
+            <h3>Aucun produit n'est disponible pour le moment</h3>
+            {% endif %}
+        </div>
+    </div>
+    
+</div>
+{% for product in product_object %}
+{{ product.category }}
+{% endfor %}
+{% endblock %}
