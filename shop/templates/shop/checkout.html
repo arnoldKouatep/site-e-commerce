@@ -98,7 +98,7 @@
             
           ${nom}
             <span class="badge badge-primary badge-pill">QTE :  ${quantite}</span>
-            <span class="badge badge-warning badge-pill">$ ${prix}</span>
+            <span class="badge badge-warning badge-pill"> ${prix} FCFA</span>
            
         </li>`;
         
@@ -108,12 +108,12 @@
     let itemNombre = `<li class="list-group-item d-flex justify-content-between align-items-center">
         <b class="bg-danger">PRIX ET QUANTITE TOTAL</b>
         <span class="badge badge-danger badge-pill">Total QTE :  ${nombre}</span>
-        <span class="badge badge-danger badge-pill">Total :$  ${total}</span>
+        <span class="badge badge-danger badge-pill">Total : ${total}  FCFA</span>
        
     </li>`;
     
     $('#item-list').append(itemNombre);
-    $('#total').val("$ "+total);
+    $('#total').val(total+"  FCFA");
     $('#items').val(JSON.stringify(panier));
 
   </script>
